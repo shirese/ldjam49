@@ -24,6 +24,7 @@ public class animRotationAxis : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        #if UNITY_EDITOR
         if (showGizmo)
         {
             UnityEditor.Handles.color = color;
@@ -39,5 +40,6 @@ public class animRotationAxis : MonoBehaviour
 
             UnityEditor.Handles.DrawWireDisc(transform.position, dir, radius);
         }
+        # endif
     }
 }
