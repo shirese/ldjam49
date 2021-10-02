@@ -7,6 +7,7 @@ public class animRotationAxis : MonoBehaviour
 
     [Header("Gizmos")]
     public bool showGizmo;
+    public Color color = Color.green;
     public int radius = 250;
     
     void Update()
@@ -25,7 +26,7 @@ public class animRotationAxis : MonoBehaviour
     {
         if (showGizmo)
         {
-            UnityEditor.Handles.color = Color.green;
+            UnityEditor.Handles.color = color;
             Vector3 dir = Vector3.up;
             if (y)
             {

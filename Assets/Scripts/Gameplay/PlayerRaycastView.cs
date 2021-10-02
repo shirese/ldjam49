@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerRaycastView : MonoBehaviour
 {
+    GameManager gameManager;
     [SerializeField] Transform playerView;
 
     [Header("Var")]
@@ -11,25 +12,40 @@ public class PlayerRaycastView : MonoBehaviour
 
     [Header("Debug")]
     public bool drawGizmo;
-    RaycastHit hit;
+    [SerializeField] PhotoTarget target, newTarget;
     [SerializeField] GameObject[] collidersHit;
+
+    RaycastHit hit;
     RaycastHit[] m_Hit = new RaycastHit[0];
+
+    private void Awake()
+    {
+        gameManager = GetComponentInParent<GameManager>();
+    }
 
     void FixedUpdate()
     {
-        bool hitted = Physics.Raycast(playerView.position, playerView.forward, out hit, bounds.extents.z * 2, layerMask);
-        if (hitted)
+        bool hitted = Physics.Raycast(playerView.position, playerView.forward, out hit, bounds.extents.z * 10, layerMask);
+        if (hitted && hit.collider.gameObject.TryGetComponent<PhotoTarget>(out PhotoTarget photoTarget))
         {
-            Debug.DrawRay(playerView.position, playerView.forward * hit.distance, Color.yellow);
+            newTarget = photoTarget;
         }
         else
         {
-            Debug.DrawRay(playerView.position, playerView.forward * bounds.extents.z, Color.red);
+            newTarget = null;
         }
 
+        if(newTarget != target)
+        {
+            target = newTarget;
+            gameManager.uiTarget.UpdateTarget(target);
+        }
 
+    }
+
+    public void DoBoxCast()
+    {
         // Fat Raycast
-        
         m_Hit = Physics.BoxCastAll(playerView.position, bounds.extents, playerView.forward, playerView.rotation, bounds.extents.z, layerMask);
         collidersHit = new GameObject[m_Hit.Length];
         for (int i = 0; i < m_Hit.Length; i++)

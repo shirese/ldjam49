@@ -18,7 +18,7 @@ public class AsteroidBelt : MonoBehaviour
         for (int i = 0; i < number; i++)
         {
             Vector3 pos = Random.insideUnitCircle.normalized * radius;
-            pos += Random.insideUnitSphere * radius * 0.1f;
+            pos += Random.insideUnitSphere * radius * 0.05f;
 
             GameObject o = new GameObject("asteroid_" + i);
             o.transform.SetParent(this.transform);
