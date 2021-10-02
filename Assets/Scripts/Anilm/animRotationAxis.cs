@@ -26,7 +26,17 @@ public class animRotationAxis : MonoBehaviour
         if (showGizmo)
         {
             UnityEditor.Handles.color = Color.green;
-            UnityEditor.Handles.DrawWireDisc(transform.position, transform.up, radius);
+            Vector3 dir = Vector3.up;
+            if (y)
+            {
+                dir = transform.up;
+            }
+            if (z)
+            {
+                dir = transform.forward;
+            }
+
+            UnityEditor.Handles.DrawWireDisc(transform.position, dir, radius);
         }
     }
 }
