@@ -1,0 +1,16 @@
+#Git Ignore file
+
+.vs/
+.vscode/
+/_files/*
+Builds/
+Library/
+Logs/
+*.log
+MemoryCaptures/
+obj/
+Temp/
+Export/
+
+*.rar
+!*.blend
