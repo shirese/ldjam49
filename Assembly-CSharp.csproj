@@ -53,7 +53,26 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\Utilities\PressKeyEvent.cs" />
+    <Compile Include="Assets\Scripts\Event\GameEvent.cs" />
+    <Compile Include="Assets\Scripts\Utilities\ConditionalFunction.cs" />
+    <Compile Include="Assets\Scripts\Utilities\AnimatorEventFunctions.cs" />
+    <Compile Include="Assets\Scripts\Utilities\ConditionChecker.cs" />
+    <Compile Include="Assets\Scripts\Utilities\ScreenTransitionImageEffect.cs" />
+    <Compile Include="Assets\Scripts\Utilities\AwakeEvent.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Line.cs" />
+    <Compile Include="Assets\Scripts\Utilities\PersistantObject.cs" />
+    <Compile Include="Assets\Scripts\Utilities\MouseReaction.cs" />
+    <Compile Include="Assets\Scripts\Sound\MuteAudioGroup.cs" />
+    <Compile Include="Assets\Scripts\Event\GameEventListener.cs" />
+    <Compile Include="Assets\Scripts\Utilities\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\LevelInfo.cs" />
+    <Compile Include="Assets\Scripts\Utilities\ControlSet.cs" />
+    <Compile Include="Assets\Scripts\Sound\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\Utilities\followObject.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Billboard.cs" />
+    <Compile Include="Assets\Scripts\Anilm\animRotationAxis.cs" />
+    <Compile Include="Assets\Scripts\Anilm\animRotation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -691,6 +710,12 @@
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
