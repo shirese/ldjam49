@@ -21,6 +21,8 @@ public class CamRotation : MonoBehaviour
 
     void Rotate()
     {
+        if (Time.timeScale <= 0.5f) return;
+
         mouseMove.x = Input.GetAxis("Mouse X") * sensitivity;
         mouseMove.y = -Input.GetAxis("Mouse Y") * sensitivity;
 
