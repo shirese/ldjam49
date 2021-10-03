@@ -24,8 +24,11 @@ public class Screenshot : MonoBehaviour
     {
         // CHECK FOLDER
         string folder = GetFolder();
+
+        #if UNITY_EDITOR || UNITY_STANDALONE
         string[] files = Directory.GetFiles(folder, "*.png", SearchOption.TopDirectoryOnly);
         count = files.Length;
+        #endif
         SetMissionText();
     }
 
@@ -74,7 +77,12 @@ public class Screenshot : MonoBehaviour
 
     public void SaveImage(string fileName)
     {
+        // IF BUILD OR EDITOR
+        #if UNITY_EDITOR || UNITY_STANDALONE
         ScreenCapture.CaptureScreenshot(fileName);
+        #endif
+        Texture2D tex = ScreenCapture.CaptureScreenshotAsTexture();
+        gallery.Add(tex);
         count++;
         UpdateText(fileName);
     }
