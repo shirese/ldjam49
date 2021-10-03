@@ -4,7 +4,7 @@ using TMPro;
 public class ui_Target : MonoBehaviour
 {
     [SerializeField] Camera cam;
-    Canvas _canvas;
+    [SerializeField] Canvas _canvas;
     RectTransform canvasRect;
 
     [Header("Infos")]
@@ -16,7 +16,6 @@ public class ui_Target : MonoBehaviour
 
     void Awake()
     {
-        _canvas = GetComponentInParent<Canvas>();
         canvasRect = _canvas.GetComponent<RectTransform>();
     }
 

@@ -6,15 +6,19 @@ using TMPro;
 
 public class Screenshot : MonoBehaviour
 {
+    [Header("Components")]
     public Camera cam;
     public Canvas _canvas;
     public Canvas _canvasDisabled;
+    public PlayerRaycastView raycaster;
+
+    [Header("Capute")]
     public KeyCode captureInput;
-    public bool screenWitouthUI;
+    [SerializeField] GameEvent screenshotTakenEvent;
 
     [Header("Storage")]
     public int count = 0;
-    public List<Texture2D> gallery;
+    public List<ScreenshotData> galleryData;
 
     [Header("Display info on UI")]
     public UI_TypeText saveMessage;
@@ -65,13 +69,14 @@ public class Screenshot : MonoBehaviour
         string fileName = ScreenShotName();
 
         yield return null;
-        if(_canvas && screenWitouthUI) _canvas.enabled = false;
+        if(_canvas) _canvas.enabled = false;
         if (_canvasDisabled) _canvasDisabled.enabled = false;
 
         yield return new WaitForEndOfFrame();
         SaveImage(fileName);
+        screenshotTakenEvent.Raise();
 
-        if (_canvas && screenWitouthUI) _canvas.enabled = true;
+        if (_canvas) _canvas.enabled = true;
         if (_canvasDisabled) _canvasDisabled.enabled = true;
     }
 
@@ -81,8 +86,16 @@ public class Screenshot : MonoBehaviour
         #if UNITY_EDITOR || UNITY_STANDALONE
         ScreenCapture.CaptureScreenshot(fileName);
         #endif
+
         Texture2D tex = ScreenCapture.CaptureScreenshotAsTexture();
-        gallery.Add(tex);
+        // NEW DATA
+        ScreenshotData data = new ScreenshotData();
+        data.tex = tex;
+
+        data.contains = raycaster.DoBoxCast();
+        data.UpdateScore();
+        galleryData.Add(data);
+        // END
         count++;
         UpdateText(fileName);
     }

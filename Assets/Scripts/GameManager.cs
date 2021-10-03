@@ -4,6 +4,16 @@ public class GameManager : MonoBehaviour
 {
     public Camera mainCam;
     public ui_Target uiTarget;
+    public UI_Gallery uiGallery;
+    public Canvas menuCanvas;
+
+    public bool InMenu
+    {
+        get
+        {
+            return menuCanvas.enabled;
+        }
+    }
 
     void Awake()
     {
@@ -14,8 +24,13 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Quit();
+            ShowMenu();
         }
+    }
+
+    public void ShowMenu(bool forceOpen = false)
+    {
+        uiGallery.ShowHide(forceOpen);
     }
 
     public static void Quit()

@@ -93,6 +93,10 @@
     <Compile Include="Assets\Scripts\Anim\attraction.cs" />
     <Compile Include="Assets\Scripts\hideIfWebGL.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PhotoEvent.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Gallery.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Screenshot.cs" />
+    <Compile Include="Assets\Scripts\ScreenshotData.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ScreenTaken.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

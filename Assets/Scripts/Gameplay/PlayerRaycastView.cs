@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerRaycastView : MonoBehaviour
 {
@@ -44,15 +45,23 @@ public class PlayerRaycastView : MonoBehaviour
 
     }
 
-    public void DoBoxCast()
+    public PhotoTargetInfo[] DoBoxCast()
     {
+        List<PhotoTargetInfo> array = new List<PhotoTargetInfo>();
+
         // Fat Raycast
         m_Hit = Physics.BoxCastAll(playerView.position, bounds.extents, playerView.forward, playerView.rotation, bounds.extents.z, layerMask);
         collidersHit = new GameObject[m_Hit.Length];
         for (int i = 0; i < m_Hit.Length; i++)
         {
             collidersHit[i] = m_Hit[i].collider.gameObject;
+            if(m_Hit[i].collider.TryGetComponent<PhotoTarget>(out PhotoTarget photoTarget))
+            {
+                if(photoTarget.info) array.Add(photoTarget.info);
+            }
         }
+
+        return array.ToArray();
     }
 
     void OnDrawGizmos()

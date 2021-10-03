@@ -2,12 +2,17 @@ using UnityEngine;
 
 public class CamRotation : MonoBehaviour
 {
+    GameManager manager;
     public Vector2 currentRotation;
     public Vector2 mouseMove = Vector2.zero;
 
     [Header("Main params")]
     [SerializeField] Vector3 amplitude;
     [SerializeField] float sensitivity = 1.5f;
+    private void Awake()
+    {
+        manager = GetComponentInParent<GameManager>();
+    }
 
     void Update()
     {
@@ -21,7 +26,7 @@ public class CamRotation : MonoBehaviour
 
     void Rotate()
     {
-        if (Time.timeScale <= 0.5f) return;
+        if (Time.timeScale <= 0.5f || manager.InMenu) return;
 
         mouseMove.x = Input.GetAxis("Mouse X") * sensitivity * (1920.0f / Screen.width);
         mouseMove.y = -Input.GetAxis("Mouse Y") * sensitivity * (1920.0f / Screen.width);
