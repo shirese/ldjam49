@@ -3,17 +3,20 @@ using Cinemachine;
 using DG.Tweening;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
+using PhotoMode;
 
 public class PlayerPhotoMode : MonoBehaviour
 {
     public CinemachineVirtualCamera photoModeCamera;
-    public CanvasGroup photoModeCanvas;
+
+    [Header("Scene Elements")]
+    [SerializeField] CanvasGroup photoModeCanvas;
+    [SerializeField] Canvas frames;
 
     [Header("Ranges")]
     public Vector2 fov;
     public float camAngle;
     public float exposure;
-    public Canvas frames;
 
     // VOLUME
     [Header("PostProcess")]
@@ -21,6 +24,11 @@ public class PlayerPhotoMode : MonoBehaviour
     private VolumeProfile photoModeVolumeProfile;
     private ColorAdjustments colorAdj;
     private DepthOfField dof;
+
+    [Header("Shaders")]
+    [SerializeField] Material postProcessingMaterial;
+    [SerializeField] Blit blit;
+    [SerializeField] Shader[] shaderArray;
 
     //Storage
     private Tween canvasAnim;
@@ -105,14 +113,23 @@ public class PlayerPhotoMode : MonoBehaviour
         //dof.aperture.Override((slider.value - slider.minValue) / (slider.maxValue - slider.minValue) * (aperture.max - aperture.min) + aperture.min);
     }
 
-    public void NextFrame()
+    public void ChangeFrame(int value)
     {
-        actualFrame++;
+        actualFrame += value;
         if (actualFrame >= frameArray.Length) actualFrame = 0;
+        else if (actualFrame < 0) actualFrame = frameArray.Length - 1;
 
         for (int i = 0; i < frameArray.Length; i++)
         {
             frameArray[i].SetActive(i == actualFrame);
         }
+    }
+
+    public void ChangeFilter(int value)
+    {
+        if (blit != null) blit.SetActive(true);
+
+        Shader shader = shaderArray[value];
+        postProcessingMaterial.shader = shader;
     }
 }

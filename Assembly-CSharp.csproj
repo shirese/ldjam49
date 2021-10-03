@@ -58,6 +58,8 @@
     <Compile Include="Assets\Scripts\Screenshot.cs" />
     <Compile Include="Assets\Scripts\Utilities\ConditionalFunction.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PhotoTargetInfo.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_TypeText.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\PlayerPhotoMode.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PhotoTarget.cs" />
     <Compile Include="Assets\Scripts\Utilities\PersistantObject.cs" />
     <Compile Include="Assets\Scripts\Utilities\AnimatorEventFunctions.cs" />
@@ -72,7 +74,9 @@
     <Compile Include="Assets\Scripts\Sound\MuteAudioGroup.cs" />
     <Compile Include="Assets\Scripts\Anilm\animRotationAxis.cs" />
     <Compile Include="Assets\Scripts\Utilities\ControlSet.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Parm.cs" />
     <Compile Include="Assets\Scripts\Utilities\followObject.cs" />
+    <Compile Include="Assets\Scripts\UI\ui_Target.cs" />
     <Compile Include="Assets\Scripts\LevelInfo.cs" />
     <Compile Include="Assets\Scripts\Anilm\animRotation.cs" />
     <Compile Include="Assets\Scripts\Event\GameEvent.cs" />
@@ -82,10 +86,8 @@
     <Compile Include="Assets\Scripts\Utilities\AwakeEvent.cs" />
     <Compile Include="Assets\Scripts\ExtDebug.cs" />
     <Compile Include="Assets\Scripts\Utilities\MouseReaction.cs" />
-    <Compile Include="Assets\Scripts\UI\ui_Target.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_TypeText.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\PlayerPhotoMode.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_Parm.cs" />
+    <Compile Include="Assets\Scripts\Custom_PostProcess\Blit.cs" />
+    <Compile Include="Assets\Scripts\Custom_PostProcess\BlitRenderPass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
