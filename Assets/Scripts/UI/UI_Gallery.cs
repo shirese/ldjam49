@@ -31,7 +31,7 @@ public class UI_Gallery : MonoBehaviour
 
     void SpawnAll(ScreenshotData[] galleryData)
     {
-        ClearGallery();
+        Clear();
 
         for (int i = 0; i < galleryData.Length; i++)
         {
@@ -40,7 +40,7 @@ public class UI_Gallery : MonoBehaviour
         }
     }
 
-    void ClearGallery()
+    void Clear()
     {
         for (int i = 0; i < galleryContainer.childCount; i++)
         {

@@ -10,7 +10,7 @@ public class UI_Screenshot : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     [SerializeField] bool clickable;
     [SerializeField] UI_Gallery parent;
 
-    [SerializeField] Image img;
+    [SerializeField] RawImage img;
     [SerializeField] Image selector;
     [SerializeField] TextMeshProUGUI number, score;
     public void Init(UI_Gallery parent, ScreenshotData data)
@@ -18,8 +18,7 @@ public class UI_Screenshot : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         this.parent = parent;
         this.data = data;
 
-        img.sprite = Sprite.Create(data.tex, new Rect(0.0f, 0.0f, data.tex.width, data.tex.height), new Vector2(0.5f, 0.5f));
-        img.preserveAspect = true;
+        img.texture = data.tex;
 
         if(number) number.text = "#" + data.ID.ToString("D3");
         if(score) score.text = "Rating - " + data.score;

@@ -56,8 +56,11 @@
     <Compile Include="Assets\Scripts\Gameplay\CamRotation.cs" />
     <Compile Include="Assets\Scripts\Screenshot.cs" />
     <Compile Include="Assets\Scripts\Utilities\ConditionalFunction.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\PhotoEvent.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PhotoTargetInfo.cs" />
     <Compile Include="Assets\Scripts\UI\UI_TypeText.cs" />
+    <Compile Include="Assets\Scripts\hideIfWebGL.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ShowFPS.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerPhotoMode.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PhotoTarget.cs" />
     <Compile Include="Assets\Scripts\Utilities\PersistantObject.cs" />
@@ -66,35 +69,35 @@
     <Compile Include="Assets\Scripts\Gameplay\PlayerRaycastView.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Sound\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Gallery.cs" />
     <Compile Include="Assets\Scripts\AsteroidBelt.cs" />
     <Compile Include="Assets\Scripts\Utilities\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\Anim\animMaterialOfsset.cs" />
+    <Compile Include="Assets\Scripts\Anim\attraction.cs" />
     <Compile Include="Assets\Scripts\Utilities\Line.cs" />
     <Compile Include="Assets\Scripts\Utilities\PressKeyEvent.cs" />
     <Compile Include="Assets\Scripts\Custom_PostProcess\BlitRenderPass.cs" />
     <Compile Include="Assets\Scripts\Sound\MuteAudioGroup.cs" />
     <Compile Include="Assets\Scripts\Anim\animRotationAxis.cs" />
     <Compile Include="Assets\Scripts\Utilities\ControlSet.cs" />
+    <Compile Include="Assets\Scripts\Data\ScreenshotData.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Parm.cs" />
     <Compile Include="Assets\Scripts\Utilities\followObject.cs" />
     <Compile Include="Assets\Scripts\UI\ui_Target.cs" />
     <Compile Include="Assets\Scripts\Custom_PostProcess\Blit.cs" />
     <Compile Include="Assets\Scripts\Anim\animRotation.cs" />
     <Compile Include="Assets\Scripts\Event\GameEvent.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ScreenTaken.cs" />
     <Compile Include="Assets\Scripts\Utilities\ScreenTransitionImageEffect.cs" />
     <Compile Include="Assets\Scripts\Utilities\Billboard.cs" />
     <Compile Include="Assets\Scripts\Utilities\ConditionChecker.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Screenshot.cs" />
     <Compile Include="Assets\Scripts\Utilities\AwakeEvent.cs" />
     <Compile Include="Assets\Scripts\ExtDebug.cs" />
     <Compile Include="Assets\Scripts\Utilities\MouseReaction.cs" />
-    <Compile Include="Assets\Scripts\Anim\animMaterialOfsset.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_ShowFPS.cs" />
-    <Compile Include="Assets\Scripts\Anim\attraction.cs" />
-    <Compile Include="Assets\Scripts\hideIfWebGL.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\PhotoEvent.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_Gallery.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_Screenshot.cs" />
-    <Compile Include="Assets\Scripts\Data\ScreenshotData.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_ScreenTaken.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ShowHide.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Missions.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Missions_line.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -705,6 +708,9 @@
     <Reference Include="Unity.Searcher.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
@@ -752,9 +758,6 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
