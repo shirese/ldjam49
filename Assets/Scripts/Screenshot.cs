@@ -89,7 +89,9 @@ public class Screenshot : MonoBehaviour
 
         string fileName = Path.GetFileName(filePath);
 
-        Texture2D tex = ScreenCapture.CaptureScreenshotAsTexture();
+        Texture2D tex = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, true);
+        tex.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0, false);
+        tex.Apply();
         // NEW DATA
         ScreenshotData data = new ScreenshotData();
         data.tex = tex;
