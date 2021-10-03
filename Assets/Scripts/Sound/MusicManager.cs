@@ -8,8 +8,10 @@ public class MusicManager : MonoBehaviour
     public List<AudioClip> musics;
     int m;
     float vol;
+
     private void Awake()
     {
+        m = -1;
         vol = source.volume;
     }
 
@@ -30,7 +32,7 @@ public class MusicManager : MonoBehaviour
         {
             return;
         }
-        else if (id<musics.Count)
+        else if (id < musics.Count)
         {
             m = id;
             source.clip = musics[id];

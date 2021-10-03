@@ -23,8 +23,8 @@ public class CamRotation : MonoBehaviour
     {
         if (Time.timeScale <= 0.5f) return;
 
-        mouseMove.x = Input.GetAxis("Mouse X") * sensitivity;
-        mouseMove.y = -Input.GetAxis("Mouse Y") * sensitivity;
+        mouseMove.x = Input.GetAxis("Mouse X") * sensitivity * (1920.0f / Screen.width);
+        mouseMove.y = -Input.GetAxis("Mouse Y") * sensitivity * (1920.0f / Screen.width);
 
         currentRotation += mouseMove;
 

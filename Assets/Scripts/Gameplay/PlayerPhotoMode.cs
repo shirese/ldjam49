@@ -34,13 +34,20 @@ public class PlayerPhotoMode : MonoBehaviour
     private Tween canvasAnim;
     private GameObject[] frameArray;
     private int actualFrame = 0;
+    private int actualShader = 0;
 
     private void Awake()
     {
         InitPostProcess();
         InitFrames();
+        postProcessingMaterial.shader = shaderArray[0];
 
         photoModeCanvas.alpha = 0;
+    }
+
+    private void OnApplicationQuit()
+    {
+        postProcessingMaterial.shader = shaderArray[0];
     }
 
     void InitFrames()
@@ -129,7 +136,11 @@ public class PlayerPhotoMode : MonoBehaviour
     {
         if (blit != null) blit.SetActive(true);
 
-        Shader shader = shaderArray[value];
+        actualShader += value;
+        if (actualShader >= shaderArray.Length) actualShader = 0;
+        else if (actualShader < 0) actualShader = shaderArray.Length - 1;
+
+        Shader shader = shaderArray[actualShader];
         postProcessingMaterial.shader = shader;
     }
 }
