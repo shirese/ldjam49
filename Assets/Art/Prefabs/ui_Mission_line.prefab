@@ -125,11 +125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba353445f5f1914f8f27adb5e8363bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 0}
   tmp: {fileID: 1106151446733736056}
   empty: {fileID: 1698522245695301233, guid: 27e526c64e833ea45b86ffa5b4fc21e0, type: 3}
   done: {fileID: 2579741705579361569, guid: 27e526c64e833ea45b86ffa5b4fc21e0, type: 3}
-  colorEmpty: {r: 0.801, g: 0.801, b: 0.801, a: 1}
-  colorDone: {r: 0.650649, g: 1, b: 0.48900002, a: 1}
+  colorEmpty: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+  colorDone: {r: 0.674, g: 1, b: 0.9589611, a: 1}
   img: {fileID: 1106151445410748488}
 --- !u!1 &1106151446733736058
 GameObject:
