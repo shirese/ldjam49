@@ -12,6 +12,7 @@ public class PlayerPhotoMode : MonoBehaviour
     [Header("Scene Elements")]
     [SerializeField] CanvasGroup photoModeCanvas;
     [SerializeField] Canvas frames;
+    [SerializeField] GameEvent showUI;
 
     [Header("Ranges")]
     public Vector2 fov;
@@ -76,6 +77,12 @@ public class PlayerPhotoMode : MonoBehaviour
         {
             FreezeTime();
         }
+
+        float scroll = Input.mouseScrollDelta.y;
+        if (scroll != 0)
+        {
+            ScrollFocal(scroll);
+        }
     }
 
     void FreezeTime()
@@ -84,6 +91,7 @@ public class PlayerPhotoMode : MonoBehaviour
 
         if (Time.timeScale > 0.5f) // SHOW PHOTO MODE
         {
+            showUI.Raise();
             canvasAnim = photoModeCanvas.DOFade(1, 0.2f).SetUpdate(true);
             Time.timeScale = 0;
         }
@@ -103,6 +111,11 @@ public class PlayerPhotoMode : MonoBehaviour
     public void ChangeFocal(float value)
     {
         float newFOV = Mathf.Lerp(fov.x, fov.y, value);
+        photoModeCamera.m_Lens.FieldOfView = newFOV;
+    }
+    public void ScrollFocal(float value)
+    {
+        float newFOV = Mathf.Clamp(photoModeCamera.m_Lens.FieldOfView - value, fov.x, fov.y);
         photoModeCamera.m_Lens.FieldOfView = newFOV;
     }
 

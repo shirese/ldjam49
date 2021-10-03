@@ -69,7 +69,9 @@ public class Screenshot : MonoBehaviour
         string fileName = ScreenShotName();
 
         yield return null;
-        if(_canvas) _canvas.enabled = false;
+
+        bool prevState = _canvasDisabled.enabled;
+        if (_canvas) _canvas.enabled = false;
         if (_canvasDisabled) _canvasDisabled.enabled = false;
 
         yield return new WaitForEndOfFrame();
@@ -77,7 +79,7 @@ public class Screenshot : MonoBehaviour
         screenshotTakenEvent.Raise();
 
         if (_canvas) _canvas.enabled = true;
-        if (_canvasDisabled) _canvasDisabled.enabled = true;
+        if (_canvasDisabled && prevState) _canvasDisabled.enabled = true;
     }
 
     public void SaveImage(string filePath)

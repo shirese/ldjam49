@@ -12,6 +12,9 @@ public class UI_Gallery : MonoBehaviour
     [Header("Big window")]
     [SerializeField] UI_Screenshot bigScreen;
 
+    [Header("Event")]
+    [SerializeField] GameEvent showGalleryEvent;
+
     private void Awake()
     {
         _canvasGallery = GetComponent<Canvas>();
@@ -25,6 +28,7 @@ public class UI_Gallery : MonoBehaviour
 
         if(_canvasGallery.enabled)
         {
+            showGalleryEvent.Raise();
             SpawnAll(data.galleryData.ToArray());
         }
     }

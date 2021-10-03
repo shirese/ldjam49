@@ -100,6 +100,8 @@
     <Compile Include="Assets\Scripts\UI\UI_Missions_line.cs" />
     <Compile Include="Assets\Scripts\Anim\anim_UI_move.cs" />
     <Compile Include="Assets\Scripts\Anim\animBoot.cs" />
+    <Compile Include="Assets\Scripts\Anim\anim_ui_poses.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ToggleCanvas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
