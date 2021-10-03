@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using TMPro;
@@ -13,6 +14,7 @@ public class Screenshot : MonoBehaviour
 
     [Header("Storage")]
     public int count = 0;
+    public List<Texture2D> gallery;
 
     [Header("Display info on UI")]
     public UI_TypeText saveMessage;
@@ -72,16 +74,15 @@ public class Screenshot : MonoBehaviour
 
     public void SaveImage(string fileName)
     {
-
         ScreenCapture.CaptureScreenshot(fileName);
         count++;
-
         UpdateText(fileName);
     }
 
     void UpdateText(string fileName)
     {
-        string saveMessageText = "OrbitalShot saved to: " + fileName;
+        string filePath = "VVD://NASA/classified/screenshots/" + Path.GetFileName(fileName);
+        string saveMessageText = "OrbitalShot saved to: " + filePath;
         if (saveMessage) saveMessage.SetText(saveMessageText);
         SetMissionText();
     }
@@ -93,5 +94,14 @@ public class Screenshot : MonoBehaviour
             string missionName = "Mission EX-A77 \nOrbitalShot " + count.ToString("D5");
             messageCount.text = missionName;
         }
+    }
+
+    public void OpenOsExplorer()
+    {
+        string folderPath = GetFolder();
+        folderPath = folderPath.Replace(@"/", @"\");
+        Debug.Log(folderPath);
+        System.Diagnostics.Process.Start("explorer.exe", "/root," + folderPath);
+        // Application.OpenURL("file://[dir]");
     }
 }

@@ -27,7 +27,7 @@ public class UI_TypeText : MonoBehaviour
         for (int i = 0; i < tmp.text.Length+1; i++)
         {
             tmp.maxVisibleCharacters = i;
-            yield return new WaitForFixedUpdate();
+            yield return new WaitForSecondsRealtime(0.015f);
         }
     }
 }

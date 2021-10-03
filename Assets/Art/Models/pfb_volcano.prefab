@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 4673664798224448003}
   - component: {fileID: 3578102063297933755}
   - component: {fileID: 6125072186967876210}
-  - component: {fileID: 738658577062509925}
-  - component: {fileID: 4286399381198973493}
   m_Layer: 0
   m_Name: Laval
   m_TagString: Untagged
@@ -83,34 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &738658577062509925
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342416204473926283}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 7.51
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4286399381198973493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342416204473926283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ac120597ae32564b90fdf9d5fe53132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collider: {fileID: 0}
-  alreadyTaken: 0
-  info: {fileID: 11400000, guid: 45c09f1eb03b89948ae78bbbd508ea7e, type: 2}
 --- !u!1 &7775091074457273201
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +121,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7775091074646167605}
+  - component: {fileID: 5263017708400394052}
+  - component: {fileID: 3868256804889930082}
   m_Layer: 0
   m_Name: volcano_model
   m_TagString: Untagged
@@ -166,14 +138,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7775091074646167604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 125.7, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: 130.55, z: -0}
+  m_LocalScale: {x: 1, y: 1.4581, z: 1}
   m_Children:
   - {fileID: 7812642947304572501}
   - {fileID: 4673664798224448003}
   m_Father: {fileID: 7775091074457273206}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5263017708400394052
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775091074646167604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 13
+  m_Center: {x: 0, y: 3, z: 0}
+--- !u!114 &3868256804889930082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775091074646167604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac120597ae32564b90fdf9d5fe53132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
+  alreadyTaken: 0
+  info: {fileID: 11400000, guid: 45c09f1eb03b89948ae78bbbd508ea7e, type: 2}
 --- !u!1001 &7775091074933039550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -228,7 +228,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: a95944c49d72c574ea224f412d8d1eec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b24ee005878317d458ef296e638bd4e4, type: 2}
+      objectReference: {fileID: 2100000, guid: 7d75b1ebc5c9ce14dbaff08d9af7fc16, type: 2}
     - target: {fileID: 919132149155446097, guid: a95944c49d72c574ea224f412d8d1eec, type: 3}
       propertyPath: m_Name
       value: mdl_volcano

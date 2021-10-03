@@ -28,7 +28,8 @@ public class PlayerRaycastView : MonoBehaviour
         bool hitted = Physics.Raycast(playerView.position, playerView.forward, out hit, bounds.extents.z * 10, layerMask);
         if (hitted && hit.collider.gameObject.TryGetComponent<PhotoTarget>(out PhotoTarget photoTarget))
         {
-            newTarget = photoTarget;
+            if (photoTarget.info && photoTarget.info.important) newTarget = photoTarget;
+            else newTarget = null;
         }
         else
         {

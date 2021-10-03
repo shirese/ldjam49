@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa9fccbebc4d54408ddcdefbb91fd0e, type: 3}
   m_Name: Moon
   m_EditorClassIdentifier: 
+  important: 1
   publicName: Moon in formation
   points: 200
