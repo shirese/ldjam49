@@ -80,18 +80,21 @@ public class Screenshot : MonoBehaviour
         if (_canvasDisabled) _canvasDisabled.enabled = true;
     }
 
-    public void SaveImage(string fileName)
+    public void SaveImage(string filePath)
     {
         // IF BUILD OR EDITOR
         #if UNITY_EDITOR || UNITY_STANDALONE
-        ScreenCapture.CaptureScreenshot(fileName);
-        #endif
+        ScreenCapture.CaptureScreenshot(filePath);
+#endif
+
+        string fileName = Path.GetFileName(filePath);
 
         Texture2D tex = ScreenCapture.CaptureScreenshotAsTexture();
         // NEW DATA
         ScreenshotData data = new ScreenshotData();
         data.tex = tex;
-
+        data.fileName = fileName;
+        data.ID = count;
         data.contains = raycaster.DoBoxCast();
         data.UpdateScore();
         galleryData.Add(data);
@@ -102,8 +105,8 @@ public class Screenshot : MonoBehaviour
 
     void UpdateText(string fileName)
     {
-        string filePath = "VVD://NASA/classified/screenshots/" + Path.GetFileName(fileName);
-        string saveMessageText = "OrbitalShot saved to: " + filePath;
+        string fakeFilePath = "VVD://NASA/classified/screenshots/" + fileName;
+        string saveMessageText = "OrbitalShot saved to: " + fakeFilePath;
         if (saveMessage) saveMessage.SetText(saveMessageText);
         SetMissionText();
     }

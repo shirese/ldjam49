@@ -53,7 +53,6 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\VisibleElements.cs" />
     <Compile Include="Assets\Scripts\Gameplay\CamRotation.cs" />
     <Compile Include="Assets\Scripts\Screenshot.cs" />
     <Compile Include="Assets\Scripts\Utilities\ConditionalFunction.cs" />
@@ -79,7 +78,6 @@
     <Compile Include="Assets\Scripts\Utilities\followObject.cs" />
     <Compile Include="Assets\Scripts\UI\ui_Target.cs" />
     <Compile Include="Assets\Scripts\Custom_PostProcess\Blit.cs" />
-    <Compile Include="Assets\Scripts\LevelInfo.cs" />
     <Compile Include="Assets\Scripts\Anim\animRotation.cs" />
     <Compile Include="Assets\Scripts\Event\GameEvent.cs" />
     <Compile Include="Assets\Scripts\Utilities\ScreenTransitionImageEffect.cs" />
@@ -95,7 +93,7 @@
     <Compile Include="Assets\Scripts\Gameplay\PhotoEvent.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Gallery.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Screenshot.cs" />
-    <Compile Include="Assets\Scripts\ScreenshotData.cs" />
+    <Compile Include="Assets\Scripts\Data\ScreenshotData.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ScreenTaken.cs" />
   </ItemGroup>
   <ItemGroup>

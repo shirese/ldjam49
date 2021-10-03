@@ -17,6 +17,7 @@ public class ui_Target : MonoBehaviour
     void Awake()
     {
         canvasRect = _canvas.GetComponent<RectTransform>();
+        UpdateTarget(null);
     }
 
     void Update()

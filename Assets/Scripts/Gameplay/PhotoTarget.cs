@@ -3,7 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class PhotoTarget : MonoBehaviour
 {
-    VisibleElements _visibleElements;
     [SerializeField] Collider _collider;
 
     [Header("Infos")]
@@ -12,8 +11,6 @@ public class PhotoTarget : MonoBehaviour
 
     void Awake()
     {
-        _visibleElements = GetComponentInParent<VisibleElements>();
-
         alreadyTaken = false;
         _collider = GetComponent<Collider>();
         _collider.isTrigger = true;
@@ -23,15 +20,4 @@ public class PhotoTarget : MonoBehaviour
     {
         alreadyTaken = true;
     }
-
-    /*
-    private void OnBecameVisible()
-    {
-        if (_visibleElements) _visibleElements.AddElement(this);
-    }
-    private void OnBecameInvisible()
-    {
-        if (_visibleElements) _visibleElements.RemoveElement(this);
-    }
-    */
 }

@@ -3,6 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public class ScreenshotData
 {
+    public string fileName;
+    public int ID;
     public Texture2D tex;
     public float score;
     public PhotoTargetInfo[] contains;
@@ -18,4 +20,10 @@ public class ScreenshotData
 
         score = total;
     }
+}
+
+[System.Serializable]
+public class ScreenshotDataContainer
+{
+    ScreenshotData[] data;
 }
