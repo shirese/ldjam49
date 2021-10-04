@@ -26,7 +26,9 @@ public class UI_Gallery : MonoBehaviour
     {
         _canvasGallery.enabled = forceOpen || !_canvasGallery.enabled;
 
-        if(_canvasGallery.enabled)
+        bigScreen.gameObject.SetActive(false);
+
+        if (_canvasGallery.enabled)
         {
             showGalleryEvent.Raise();
             SpawnAll(data.galleryData.ToArray());

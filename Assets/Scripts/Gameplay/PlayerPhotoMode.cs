@@ -9,6 +9,7 @@ using TMPro;
 public class PlayerPhotoMode : MonoBehaviour
 {
     public CinemachineVirtualCamera photoModeCamera;
+    public CinemachineVirtualCamera exteriorCamera;
 
     [Header("Scene Elements")]
     [SerializeField] CanvasGroup photoModeCanvas;
@@ -64,6 +65,15 @@ public class PlayerPhotoMode : MonoBehaviour
             frameArray[i] = fTransform.GetChild(i).gameObject;
             frameArray[i].SetActive(i == actualFrame);
         }
+    }
+
+    public void SwitchCamera()
+    {
+        Debug.Log("SWITCH CAMERA");
+        photoModeCamera.m_Priority = 10;
+
+        if (exteriorCamera.m_Priority >= 10) exteriorCamera.m_Priority = 5;
+        else exteriorCamera.m_Priority = 15;
     }
 
     void InitPostProcess()
