@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowCredits(bool state)
     {
-        if (uiGallery._canvasGallery.enabled) uiGallery.ShowHide();
+        if (uiGallery._canvasGallery.enabled && state) uiGallery.ShowHide();
         credits.enabled = state;
     }
 
