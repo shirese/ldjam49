@@ -53,6 +53,7 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\UI\UI_Missions_line.cs" />
     <Compile Include="Assets\Scripts\Gameplay\CamRotation.cs" />
     <Compile Include="Assets\Scripts\Screenshot.cs" />
     <Compile Include="Assets\Scripts\Utilities\ConditionalFunction.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Assets\Scripts\Event\GameEventListener.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerRaycastView.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ToggleCanvas.cs" />
     <Compile Include="Assets\Scripts\Sound\MusicManager.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Gallery.cs" />
     <Compile Include="Assets\Scripts\AsteroidBelt.cs" />
@@ -81,35 +83,44 @@
     <Compile Include="Assets\Scripts\Anim\animRotationAxis.cs" />
     <Compile Include="Assets\Scripts\Utilities\ControlSet.cs" />
     <Compile Include="Assets\Scripts\Data\ScreenshotData.cs" />
+    <Compile Include="Assets\Scripts\Anim\animSwapMeshOnCollision.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Parm.cs" />
     <Compile Include="Assets\Scripts\Utilities\followObject.cs" />
     <Compile Include="Assets\Scripts\UI\ui_Target.cs" />
+    <Compile Include="Assets\Scripts\Anim\anim_UI_move.cs" />
     <Compile Include="Assets\Scripts\Custom_PostProcess\Blit.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Missions.cs" />
     <Compile Include="Assets\Scripts\Anim\animRotation.cs" />
     <Compile Include="Assets\Scripts\Event\GameEvent.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ShowHide.cs" />
+    <Compile Include="Assets\Scripts\Anim\anim_rb_explosion.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ScreenTaken.cs" />
     <Compile Include="Assets\Scripts\Utilities\ScreenTransitionImageEffect.cs" />
+    <Compile Include="Assets\Scripts\Anim\animBoot.cs" />
     <Compile Include="Assets\Scripts\Utilities\Billboard.cs" />
     <Compile Include="Assets\Scripts\Utilities\ConditionChecker.cs" />
+    <Compile Include="Assets\Scripts\Anim\anim_ui_poses.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Screenshot.cs" />
     <Compile Include="Assets\Scripts\Utilities\AwakeEvent.cs" />
     <Compile Include="Assets\Scripts\ExtDebug.cs" />
     <Compile Include="Assets\Scripts\Utilities\MouseReaction.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_ShowHide.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_Missions.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_Missions_line.cs" />
-    <Compile Include="Assets\Scripts\Anim\anim_UI_move.cs" />
-    <Compile Include="Assets\Scripts\Anim\animBoot.cs" />
-    <Compile Include="Assets\Scripts\Anim\anim_ui_poses.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_ToggleCanvas.cs" />
+    <Compile Include="Assets\Scripts\Anim\anim_rb_move.cs" />
+    <Compile Include="Assets\Scripts\Rendering\AtmosphereGenerator.cs" />
+    <Compile Include="Assets\Scripts\Rendering\DrawFullscreenFeature.cs" />
+    <Compile Include="Assets\Scripts\Rendering\ComputeHelper.cs" />
+    <Compile Include="Assets\Scripts\Rendering\AtmosphereSettings.cs" />
+    <Compile Include="Assets\Scripts\Rendering\DrawFullscreenPass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Art\Shaders\Atmosphere.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Art\Shaders\AtmosphereTexture.compute" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Art\Shaders\Math.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />

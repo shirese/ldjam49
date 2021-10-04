@@ -15,6 +15,7 @@ public class PhotoEvent : MonoBehaviour
 
     float chanceByFrame = 0;
     public PhotoTarget toActivate;
+    public GameObject toActivateG;
 
     void Awake()
     {
@@ -41,7 +42,9 @@ public class PhotoEvent : MonoBehaviour
 
     void Activate(bool state)
     {
-        toActivate.gameObject.SetActive(state);
+        if(toActivate) toActivate.gameObject.SetActive(state);
+        else toActivateG.SetActive(state);
+
         if (state)
         {
             happened = true;

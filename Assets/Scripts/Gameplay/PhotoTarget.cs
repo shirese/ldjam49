@@ -12,7 +12,7 @@ public class PhotoTarget : MonoBehaviour
     void Awake()
     {
         alreadyTaken = false;
-        _collider = GetComponent<Collider>();
+        if(!_collider) _collider = GetComponent<Collider>();
         _collider.isTrigger = true;
     }
 

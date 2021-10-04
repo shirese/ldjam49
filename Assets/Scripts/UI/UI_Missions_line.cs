@@ -16,7 +16,7 @@ public class UI_Missions_line : MonoBehaviour
     {
         this.info = info;
 
-        if (tmp)
+        if (tmp && info)
         {
             string targetName = info.publicName;
             bool isVowel = "aeiouAEIOU".IndexOf(targetName[0]) >= 0;
