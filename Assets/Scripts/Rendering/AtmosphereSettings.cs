@@ -50,6 +50,7 @@ public class AtmosphereSettings : ScriptableObject {
             float scatterY = Pow (400 / wavelengths.y, 4);
             float scatterZ = Pow (400 / wavelengths.z, 4);
             material.SetVector ("scatteringCoefficients", new Vector3 (scatterX, scatterY, scatterZ) * scatteringStrength);
+            material.SetVector ("dirToSun", RenderSettings.sun.transform.GetChild(0).transform.position.normalized);
             material.SetFloat ("intensity", intensity);
             material.SetFloat ("ditherStrength", ditherStrength);
             material.SetFloat ("ditherScale", ditherScale);
