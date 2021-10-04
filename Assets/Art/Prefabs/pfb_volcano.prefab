@@ -10036,7 +10036,7 @@ MonoBehaviour:
   happened: 0
   duration: 7
   timeToHappen: 0
-  chanceToHappen: 0.5
+  chanceToHappen: 0.25
   random: 1
   toActivate: {fileID: 136295711068550514}
 --- !u!1001 &7775091074933039550

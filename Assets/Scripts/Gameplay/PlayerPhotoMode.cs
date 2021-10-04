@@ -4,6 +4,7 @@ using DG.Tweening;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using PhotoMode;
+using TMPro;
 
 public class PlayerPhotoMode : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerPhotoMode : MonoBehaviour
     [SerializeField] CanvasGroup photoModeCanvas;
     [SerializeField] Canvas frames;
     [SerializeField] GameEvent showUI;
+    [SerializeField] TextMeshProUGUI zoomLevelText;
 
     [Header("Ranges")]
     public Vector2 fov;
@@ -111,12 +113,19 @@ public class PlayerPhotoMode : MonoBehaviour
     public void ChangeFocal(float value)
     {
         float newFOV = Mathf.Lerp(fov.x, fov.y, value);
-        photoModeCamera.m_Lens.FieldOfView = newFOV;
+        SetFocal(newFOV);
     }
     public void ScrollFocal(float value)
     {
         float newFOV = Mathf.Clamp(photoModeCamera.m_Lens.FieldOfView - value, fov.x, fov.y);
+        SetFocal(newFOV);
+    }
+
+    void SetFocal(float newFOV)
+    {
         photoModeCamera.m_Lens.FieldOfView = newFOV;
+        string text = newFOV == fov.x ? "MAX" : (fov.y - newFOV).ToString();
+        if (zoomLevelText) zoomLevelText.text = "ZOOM LEVEL\n" + text;
     }
 
     public void ViewRoll(float value)
