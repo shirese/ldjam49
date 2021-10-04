@@ -8,7 +8,7 @@ public class animBoot : MonoBehaviour
     public GameEvent loadPlanetScene;
     Coroutine anim;
     public bool tween;
-    public TextMeshProUGUI main, endInput;
+    public TextMeshProUGUI main, endInput, skipText;
 
     void Start()
     {
@@ -53,11 +53,12 @@ public class animBoot : MonoBehaviour
         }
 
         yield return new WaitForSecondsRealtime(0.5f);
-
+        End();
     }
 
     public void End()
     {
+        skipText.enabled = false;
         tween = false;
         StopCoroutine(anim);
         main.maxVisibleCharacters = 9999;

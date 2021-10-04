@@ -39,7 +39,7 @@ public class UI_Gallery : MonoBehaviour
     {
         Clear();
 
-        for (int i = 0; i < galleryData.Length; i++)
+        for (int i = galleryData.Length-1; i >= 0 ; i--)
         {
             UI_Screenshot ui = Instantiate(ui_prefab, galleryContainer);
             ui.Init(this, galleryData[i]);

@@ -25,5 +25,5 @@ public class ScreenshotData
 [System.Serializable]
 public class ScreenshotDataContainer
 {
-    ScreenshotData[] data;
+    public ScreenshotData[] data;
 }
