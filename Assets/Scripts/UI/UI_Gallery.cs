@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UI_Gallery : MonoBehaviour
 {
-    Canvas _canvasGallery;
+    public Canvas _canvasGallery;
     [SerializeField] Screenshot data;
 
     [Header("Self")]

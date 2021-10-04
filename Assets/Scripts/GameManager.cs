@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public ui_Target uiTarget;
     public UI_Gallery uiGallery;
     public Canvas menuCanvas;
+    public Canvas credits;
 
     public bool InMenu
     {
@@ -31,6 +32,13 @@ public class GameManager : MonoBehaviour
     public void ShowMenu(bool forceOpen = false)
     {
         uiGallery.ShowHide(forceOpen);
+        if (uiGallery._canvasGallery.enabled) ShowCredits(false);
+    }
+
+    public void ShowCredits(bool state)
+    {
+        if (uiGallery._canvasGallery.enabled) uiGallery.ShowHide();
+        credits.enabled = state;
     }
 
     public static void Quit()
