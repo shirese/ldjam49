@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteAlways]
@@ -14,10 +12,8 @@ public class AtmosphereGenerator : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (AtmosphereMaterial != null)
-            Settings.SetProperties(AtmosphereMaterial, bodyRadius);
+        if (AtmosphereMaterial != null) Settings.SetProperties(AtmosphereMaterial, bodyRadius);
     }
 }

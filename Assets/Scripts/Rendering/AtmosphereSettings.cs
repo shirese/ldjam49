@@ -60,10 +60,12 @@ public class AtmosphereSettings : ScriptableObject {
             PrecomputeOutScattering ();
             material.SetTexture ("_BakedOpticalDepth", opticalDepthTexture);
 #endif
+            /*
 #if UNITY_STANDALONE_WIN
             void SaveTexture () {
                 byte[] bytes = toTexture2D(opticalDepthTexture).EncodeToPNG();
-                System.IO.File.WriteAllBytes("C:/Users/Shirese/SavedScreen.png", bytes);
+                string texturePath = System.IO.Path.Combine(Application.persistentDataPath, "SavedScreen.png");
+                System.IO.File.WriteAllBytes(texturePath, bytes);
             }
             Texture2D toTexture2D(RenderTexture rTex)
             {
@@ -75,10 +77,11 @@ public class AtmosphereSettings : ScriptableObject {
             }
             SaveTexture();
 #endif
+            */
 #if UNITY_WEBGL
-            material.SetTexture ("_BakedOpticalDepth", opticalDepthTextureBackup);
+            //material.SetTexture ("_BakedOpticalDepth", opticalDepthTextureBackup);
 #endif
-
+            material.SetTexture("_BakedOpticalDepth", opticalDepthTextureBackup);
 
             settingsUpToDate = true;
         }
